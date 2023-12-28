@@ -23,7 +23,7 @@ body {
 .calculator {
     aspect-ratio: 9/16;
     width: 100%;
-    max-width: 350px;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -31,6 +31,7 @@ body {
     box-shadow: 0 0 5px var(--keypad-bg-color2);
     border-radius: 20px;
     padding: 20px;
+    margin: 20px;
 }
 
 .calculator .display {
