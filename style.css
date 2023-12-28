@@ -1,0 +1,117 @@
+:root {
+    --bg-color: #F2F1EB;
+    --keypad-bg-color: #e3dac6;
+    --keypad-bg-color2: #AFC8AD;
+    --text-color: #88AB8E;
+
+    /* --bg-color: #2C3639;
+    --keypad-bg-color: #3F4E4F;
+    --keypad-bg-color2: #A27B5C;
+    --text-color: #DCD7C9; */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+}
+
+.calculator {
+    aspect-ratio: 9/16;
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--keypad-bg-color);
+    box-shadow: 0 0 5px var(--keypad-bg-color2);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.calculator .display {
+    background-color: var(--bg-color);
+    height: 20%;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: right;
+}
+
+.calculator .display input {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-align: right;
+    font-size: 3rem;
+    color: var(--text-color);
+    
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    height: 80%;
+}
+
+.calculator .keys button {
+    background-color: var(--bg-color);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 2rem;
+    color: var(--text-color);
+    cursor: pointer;
+    box-shadow: 1px 1px 5px var(--keypad-bg-color2), -1px -1px 5px var(--keypad-bg-color2);
+}
+
+.calculator .keys .equalbtn {
+    grid-column: 3/5;
+    background-color: var(--keypad-bg-color2);
+    color: var(--bg-color);
+}
+
+.theme-switch {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.theme-toggle-label {
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    background-color: var(--keypad-bg-color2);
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.theme-toggle-label::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    background-color: var(--text-color);
+    transition: transform 0.3s ease;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.theme-switch input:checked + .theme-toggle-label::after {
+    transform: translateX(18px);
+}
